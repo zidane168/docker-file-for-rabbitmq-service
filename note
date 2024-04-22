@@ -1,0 +1,18 @@
+
+
+Console Admin Account:
+http://dev-vn.vtl-lab.com:8321/
+admin / vtl39565372
+
+
+ftp://dev-vn.vtl-lab.com:8320/
+admin / vtl39565372
+
+// config in CakePHP 
+'RabbitMQ' => array(
+    'host' => 'dev-vn.vtl-lab.com',
+    'port' => 8320,
+    'username' => 'admin',
+    'password' => 'vtl39565372',
+    'vhost' => '/',
+),  

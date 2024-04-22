@@ -1,0 +1,30 @@
+version: "3.2"
+services:
+  crystaljade-rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: crystaljade-rabbitmq
+    restart: always
+    labels:
+      - "traefik.enable=false"
+    ports:
+      - 8320:5672
+      - 8321:15672
+    environment:
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: vtl39565372
+    volumes:
+      - ./data:/var/lib/rabbitmq
+      - ./log:/var/log/rabbitmq
+    networks:
+      - dev-vn-networks
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
+
+networks:
+  dev-vn-networks:
+    external: true
+    driver: bridge
+
